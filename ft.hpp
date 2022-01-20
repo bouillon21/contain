@@ -5,6 +5,10 @@
 
 namespace ft
 {
+
+	//enable_if  используется для удаления кандидатов из разрешения перегрузки,
+	//— так как он исключает набор перегрузок,
+	//— чтобы одно определение можно было отклонить в пользу другого.
 	template <bool B, class T = void>
 	struct enable_if
 	{
@@ -86,6 +90,8 @@ namespace ft
 	{
 	};
 
+
+	//equal Сравнивает два диапазона поэлементно на признак равенства или равноценности
 	template <class InputIt1, class InputIt2>
 	bool equal(InputIt1 first1, InputIt1 last1, InputIt2 first2)
 	{
@@ -103,7 +109,8 @@ namespace ft
 				return false;
 		return true;
 	}
-
+	
+	//lexicographical_compare() производит лексикографическое сравнение коллекций.
 	template <class Ite1, class Ite2>
 	bool lexicographical_compare(Ite1 first1, Ite1 last1, Ite2 first2, Ite2 last2)
 	{
